@@ -108,3 +108,5 @@ result/
 static/
 
 templates/
+
+test.db

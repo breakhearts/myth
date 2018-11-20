@@ -33,6 +33,12 @@ def message(id=None):
     return render_template('message.html', vm=vm)
 
 
+@app.route('/valid_list/')
+def valid_list():
+    vms = VoteMessage.query.filter_by(selected=True).all()
+    return render_template('valid_list.html', vms=vms)
+
+
 @app.route('/accept/<id>')
 def accept(id=None):
     vm = VoteMessage.query.filter_by(id=id).first()
